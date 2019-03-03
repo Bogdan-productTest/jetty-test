@@ -1,12 +1,14 @@
 package com.My.Tests;
 
 import com.My.Users;
+import io.qameta.allure.Epic;
 import org.junit.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@Epic("Functionals")
 public class FunctionalTestsUsersEndpoint extends TestBase {
 
     @Test

@@ -62,5 +62,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.jayway.restassured:rest-assured-common:2.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.jayway.restassured:xml-path:2.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
+    <orderEntry type="library" name="io.qameta.allure:allure-junit4:2.0-BETA21" level="project" />
+    <orderEntry type="library" name="org.aspectj:aspectjweaver:1.9.1" level="project" />
   </component>
 </module>

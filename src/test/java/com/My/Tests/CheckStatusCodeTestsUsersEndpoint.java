@@ -1,19 +1,26 @@
 package com.My.Tests;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Issue;
 import org.junit.Test;
 import java.util.HashMap;
+import io.qameta.allure.Description;
 
+@Epic("Status codes")
 public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
 
     @Test
+    @Issue("432")
+    @Description("Get /rs/users return code 200")
     public void getUsers_statusCodeIs200() {
         printMethodName(new Object() {});
         log("Create user: " + user.getUser() + "\n");
         createUser(user.getUser());
-        usersEndpoint.get().validateStatusCode(200);
+        usersEndpoint.get().validateStatusCode(201);
     }
 
     @Test
+    @Description("Get /rs/users/{valid_id} return code 200")
     public void getValidUser_statusCodeIs200() {
         printMethodName(new Object() {});
         HashMap <String, String> userExpected = createUser(user.getUser());
@@ -21,6 +28,7 @@ public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
     }
 
     @Test
+    @Description("Get /rs/users/{invalid_id} return code 404")
     public void getInvalidUser_statusCodeIs404() {
         printMethodName(new Object() {});
         HashMap <String, String> userExpected = createUser(user.getUser());
@@ -28,6 +36,7 @@ public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
     }
 
     @Test
+    @Description("Post /rs/users return code 200")
     public void createUser_statusCodeIs200() {
         printMethodName(new Object() {});
         createUser(user.getUser());
@@ -35,6 +44,7 @@ public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
     }
 
     @Test
+    @Description("Put /rs/users/{valid_id} return code 200")
     public void modifyValidUser_statusCodeIs200() {
         printMethodName(new Object() {});
         HashMap <String, String> userExpected = createUser(user.getUser());
@@ -43,6 +53,7 @@ public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
     }
 
     @Test
+    @Description("Put /rs/users/{invalid_id} return code 404")
     public void modifyInvalidUser_statusCodeIs404() {
         printMethodName(new Object() {});
         HashMap <String, String> userExpected = createUser(user.getUser());
@@ -52,6 +63,7 @@ public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
     }
 
     @Test
+    @Description("Delete /rs/users/{valid_id} return code 200")
     public void deleteUser_statusCodeIs200() {
         printMethodName(new Object() {});
         HashMap <String, String> userExpected = createUser(user.getUser());
@@ -59,6 +71,7 @@ public class CheckStatusCodeTestsUsersEndpoint extends TestBase {
     }
 
     @Test
+    @Description("Delete /rs/users/{invalid_id} return code 404")
     public void deleteInvalidUser_statusCodeIs404() {
         printMethodName(new Object() {});
         HashMap <String, String> userExpected = createUser(user.getUser());
